@@ -63,4 +63,4 @@ echo $student_list_kcse[1][2];
 
 echo $d_3[1][1][1];
 #accessing the second one
-echo $d_3[1][1][0];
+echo $d_3[1][1][1];
