@@ -1,16 +1,41 @@
 <?php
 
+
+function printy(){
+  echo 'yeah'; //prints out something
+  //doesnt return anything
+ return 'something';
+}
+//$value = printy();
+//var_dump($value
+
 /**
  Saves the submitted form data into a cookie
+ $new looks like : ['example-name',43,'male'] - array
 */
 function printy()
 function saveInCookie($new){
 
+<<<<<<< HEAD
   $cookie = $_COOKIE['greeter'];//Associative Array
+=======
+  $cookie = $_COOKIE['greeter'];//Associative array
+  /* $_COOKIE
+  [
+    'greeter' => "["
+      "["'example',43,'male'"]"
+      ---
+    "]"
+
+  ]
+  */
+>>>>>>> f573de0219eb4050c25ffc6e4fcbd6c9533ca5ca
   if(isset($cookie)){
 
     $greeters = getCookieAsArray($cookie);
-
+    //[2,3]
+    //array_push([2,3],4)
+    //[2,3,4]
     array_push($greeters,$new);
 
   }else{
@@ -19,7 +44,11 @@ function saveInCookie($new){
     );
   }
 
+<<<<<<< HEAD
   //convert array into a string--json (data-exchange)
+=======
+  //convert array into a string -- json (data-exchange)
+>>>>>>> f573de0219eb4050c25ffc6e4fcbd6c9533ca5ca
   $json = json_encode($greeters);
 
   //save cookie
@@ -30,6 +59,12 @@ function saveInCookie($new){
   Get the saved cookie as an array
 */
 function getCookieAsArray($cookie){
+
   $cookie = stripslashes($cookie);
+  //echo $cookie;
+  //var_dump(json_decode($cookie, true));
+  #die();
   return json_decode($cookie, true);
 }
+#saveInCookie(['amos',22,'male']);
+#getCookieAsArray($_COOKIE['greeter']);

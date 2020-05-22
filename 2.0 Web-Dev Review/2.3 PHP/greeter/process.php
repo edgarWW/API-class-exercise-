@@ -1,7 +1,14 @@
 <?php
+<<<<<<< HEAD
 //add helper file
 require_once 'helper.php';
 //var_dump($_GET); #superglobal(forms) -- update/create
+=======
+#include the helper file
+require_once 'helper.php';
+
+#var_dump($_GET); #superglobal(forms) -- update/create
+>>>>>>> f573de0219eb4050c25ffc6e4fcbd6c9533ca5ca
 
 #stops either
 #die();
@@ -19,6 +26,8 @@ if($space_position == false){
 }else{
   $first_name =  substr($all_name,0,$space_position);
 }
+#save the data in a cookie
+saveInCookie([$first_name,$gender]);
 
 #echo $age;
 $greeting = $first_name;

@@ -62,11 +62,11 @@ echo"
 <h1>Counties in the Republic of Kenya,Governors and their Political Parties</h1>
 <table border='1'>
 <tr>
-        <th>County number</th>
-        <th> County </th>
-		<th>Governor</th>
-		<th>Democratic Party</th>
-    </tr>";
+        <th>#</th>
+        <th>Name </th>
+		    <th>Governor</th>
+		    <th>Democratic Party</th>
+ </tr>";
 
 	for($i = 0; $i < 47; $i++) {
 		$no = $myArray[$i];

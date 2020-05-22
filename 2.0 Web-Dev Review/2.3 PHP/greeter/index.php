@@ -1,8 +1,14 @@
 <?php
+<<<<<<< HEAD
 
 require_once 'helper.php';
 
  ?>
+=======
+#including the helper.php file (require vs include... require_once vs include_once?)
+require_once 'helper.php';
+?>
+>>>>>>> f573de0219eb4050c25ffc6e4fcbd6c9533ca5ca
 
 <!DOCTYPE html>
 <html>
@@ -79,6 +85,7 @@ require_once 'helper.php';
 
           <tbody>
             <?php
+<<<<<<< HEAD
               var_dump=getCookieAsArray($_COOKIE['greeter']);
               var_dump($greetings);
               //iterative structure
@@ -86,10 +93,38 @@ require_once 'helper.php';
                 var_dump($row);
               }
               ?>
+=======
+              //var_dump($_COOKIE);
+              $greetings = getCookieAsArray($_COOKIE['greeter']);
+              //var_dump($greetings[2]);
+              //$names = "Nickson,Wiseman,Melody,Myra";
+              // # | Name
+              // 1 | Nickson
+              // 2 | Wiseman
+              //$names_array = explode(',',$names);
+              //var_dump($names_array);
+              //var_dump(implode(',',$names_array));
+              //var_dump($greetings);
+              //iterative structure..
+              //$simpleton = [3,4,5,6];
+              foreach($greetings as $row):
+
+            ?>
+>>>>>>> f573de0219eb4050c25ffc6e4fcbd6c9533ca5ca
 
             <tr class="hover:bg-grey-lighter">
-              <td colspan="2">None</td>
+              <td><?=$row[0];?></td>
+              <td><?= ($row[1] == 'f') ? 'Female' : 'Male';?></td>
+              <!-- <td><?php
+                /*if($row[1] == 'm'){
+                  echo 'Male';
+                }else{
+                   echo 'Female';
+                 }*/
+                ?></td> -->
+
             </tr>
+          <?php endforeach; ?>
           </tbody>
       </div>
 
