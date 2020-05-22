@@ -1,11 +1,15 @@
 <?php
-var_dump($_GET); #superglobal(forms) -- update/create
+//add helper file
+require_once 'helper.php';
+//var_dump($_GET); #superglobal(forms) -- update/create
 
 #stops either
 #die();
 $all_name = $_REQUEST['full-name'];
 $age = $_GET['age'];
 $gender = $_GET['gender'];
+//save
+$
 
 /*Getting the first name if it exists*/
 $space_position = strpos($all_name,' ');

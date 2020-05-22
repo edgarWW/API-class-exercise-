@@ -3,9 +3,10 @@
 /**
  Saves the submitted form data into a cookie
 */
+function printy()
 function saveInCookie($new){
 
-  $cookie = $_COOKIE['greeter'];
+  $cookie = $_COOKIE['greeter'];//Associative Array
   if(isset($cookie)){
 
     $greeters = getCookieAsArray($cookie);
@@ -18,7 +19,7 @@ function saveInCookie($new){
     );
   }
 
-  //convert array into a string
+  //convert array into a string--json (data-exchange)
   $json = json_encode($greeters);
 
   //save cookie

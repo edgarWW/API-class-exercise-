@@ -1,3 +1,9 @@
+<?php
+
+require_once 'helper.php';
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -72,6 +78,15 @@
          </thead>
 
           <tbody>
+            <?php
+              var_dump=getCookieAsArray($_COOKIE['greeter']);
+              var_dump($greetings);
+              //iterative structure
+              foreach ($greetings as $greetings ) {
+                var_dump($row);
+              }
+              ?>
+
             <tr class="hover:bg-grey-lighter">
               <td colspan="2">None</td>
             </tr>
