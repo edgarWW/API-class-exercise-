@@ -57,63 +57,10 @@ $county_data = "1. Mombasa. – Hassan Ali Joho – ODM,
 
 // @TODO : Your code starts here
 
-$arr = explode(",",$county_data);
-?>
-<center>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kenya</title>
-  <style>
-  table, th, td {
-  border: 1px solid black;
+function splitter($county_string){
+  $county_array=explode(",",$county_string);
 }
+splitter($county_data);
 
-  </style>
-</head>
-
-<body>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th colspan="2">Governor</th>
-              <th>Website</th>
-            </tr>
-          </thead>
-          <tbody>
-
-
-<<?php
-for($i = 0; $i < 47; $i++) {
-  $no = $arr[$i];
-
-  $numb = preg_replace('/\D/', '', $no);
-  $num = $no;
-  $numb1 = preg_replace('/\d\d. /', '', $num);
-  $numb1 = preg_replace('/\d. /', '', $numb1);
-  $numb1 = preg_replace('/\./', '', $numb1);
-  $numb1 = preg_replace('/\-/', '–', $numb1);
-  $numb2 = explode(' – ', $numb1);
-  $numb1 = preg_replace('/\-/', '', $numb1);
-
-  $numb2[0] = preg_replace('/\ /', '', $numb2[0]);
-
-
-    echo "<tr>
-    <td>".$numb."</td>
-    <td>".$numb2[0]."</td>
-    <td>".$numb2[1]."</td>
-    <td><a style = 'text-decoration: none; color:blue;' href='http://".$numb2[0].".go.ke'>http://".$numb2[0].".go.ke</td>
-    </tr>
-    ";
-  }
-  echo"
-  </table>
-  </center>";
 
 ?>
