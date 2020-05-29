@@ -81,14 +81,14 @@ $arr = explode(",",$county_data);
             <tr>
               <th>#</th>
               <th>Name</th>
-              <th colspan="2">Governor</th>
+              <th >Governor</th>
               <th>Website</th>
             </tr>
           </thead>
           <tbody>
 
 
-<<?php
+<?php
 for($i = 0; $i < 47; $i++) {
   $no = $arr[$i];
 
