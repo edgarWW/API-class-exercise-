@@ -29,6 +29,8 @@ class Konekta{
 
   public function getConfig(){
 
+    var_dump(__DIR__.'config.json');die();
+
     $config_string = file_get_contents('config.json');
 
     $config_object = json_decode($config_string);
