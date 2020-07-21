@@ -2,11 +2,10 @@
 
 namespace Models;
 
-require_once '../our_autoloader.php';
+require_once '..our_outoloader.php'
 
 class Quote{
-  #hold our database connection
-  #hold the object of type Konekta
+
   private $db;
 
   public $qid;
@@ -16,47 +15,23 @@ class Quote{
   public $dod;
   public $category;
 
-  public function __construct(){
-    #connect to the database
-    $this->db = new \Konekta();
+  public funcction __construct(){
+    //connect to the database
+    $this->db= new  \Konekta();
+
   }
-
   public function getQuote($id){
-    #the attacker will be thwarted because the query will be erroneous
-    $id = $this->db->konn->real_escape_string($id);
-
+    $id = $this->konn->real_escape_string($id);
     $sql = "SELECT * FROM quote WHERE qid=$id";
 
-    #execute
-    $result = $this->db->konn->query($sql);
+    //execute
+    $result = $this->db->query($sql);
+    var_dump($result->fetch_row());
 
-    $row = $result->fetch_row();
-    $this->qid = $row[0];
-    $this->quote = $row[1];
-
+    echo $sql;
   }
 
-  public static function getCount(){
-
-    /*$db = (new \Konekta());
-
-    $sql = "SELECT COUNT(*) as count FROM quote";
-
-    $result = $db->konn->query($sql);
-
-    $row = $result->fetch_row();
-
-    echo $count = $row[0];*/
-
-    return (new \Konekta())
-                    ->konn
-                    ->query("SELECT COUNT(*) as count FROM quote")
-                    ->fetch_row()[0];
-  }
-
-}
-$first_quote = new Quote();
-$good_id = 1;
-//$first_quote->getQuote($good_id);
-
-Quote::getCount();
+$first_quote =new Quote();
+//SQL Injection
+$bad_id = "12 OR '1 = 1'";
+$first_quote->getQuote($bad_id);
